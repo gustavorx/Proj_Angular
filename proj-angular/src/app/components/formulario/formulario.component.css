@@ -1,0 +1,35 @@
+.form-id{
+    width: 20%;
+}
+
+.form-nome{
+    width: 78%;
+}
+
+.form-endereco{
+    width: 49%;
+}
+
+.form-cidade{
+    width: 50%;
+}
+
+.form-bairro{
+    width: 49%;
+}
+
+.form-cep{
+    width: 29%;
+}
+
+.form-telefone{
+    width: 20%;
+}
+
+.form-bg-color{
+    background-color: rgba(10, 88, 202, 0.2)
+} 
+
+.form-btn-margin-right button, .form-btn-margin-right input{
+    margin-right: 7rem;
+}

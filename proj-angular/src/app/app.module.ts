@@ -3,19 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-import { OlaAngularComponent } from './components/ola-angular/ola-angular.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OlaAngularComponent,
     HeaderComponent,
     FormularioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,46 +1,70 @@
 <div class="my-3 p-3">
-    <form>
-        <div class="form-group">
-            <label for="nomeInput">ID</label>
-            <input [readonly]="true" type="nome" class="form-control" id="nomeInput" placeholder="Digite um nome"
-                #nomeInput>
+    <form class="container" id="form">
+        <div class="d-flex justify-content-between">
+            <div class="form-group form-id">
+                <label for="idInput">ID</label>
+                <input disabled type="id" class="form-control" id="idInput" placeholder="o ID é automático">
+            </div>
+
+            <div class="form-group form-nome">
+                <label for="nome">Nome</label>
+                <input [(ngModel)]="nome" name="nome" [readonly]="readOnlyNome" type="text" class="form-control"
+                    id="nomeInputA" placeholder="Digite um nome">
+            </div>
+
         </div>
 
-        <div class="form-group">
-            <label for="nomeInputa">Nome</label>
-            <input type="nome" class="form-control" id="nomeInputA" placeholder="Digite um nome" #nomeInputA>
+        <div class="d-flex justify-content-between">
+            <div class="form-group form-endereco">
+                <label for="enderecoInput">Endereco</label>
+                <input [(ngModel)]="endereco" name="endereco" [readonly]="readOnlyEndereco" type="text"
+                    class="form-control" id="enderecoInput" placeholder="Digite um endereço">
+            </div>
+
+            <div class="form-group form-cidade">
+                <label for="cidadeInput">Cidade</label>
+                <input [(ngModel)]="cidade" name="cidade" [readonly]="readOnlyCidade" type="text" class="form-control"
+                    id="cidadeInput" placeholder="Digite a cidade">
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="nomeInputa">Endereco</label>
-            <input type="nome" class="form-control" id="nomeInputA" placeholder="Digite um nome" #nomeInputA>
-        </div>
+        <div class="d-flex justify-content-between">
+            <div class="form-group form-bairro">
+                <label for="bairroInput">Bairro</label>
+                <input [(ngModel)]="bairro" name="bairro" [readonly]="readOnlyBairro" type="text" class="form-control"
+                    id="bairroInput" placeholder="Digite o bairro">
+            </div>
 
-        <div class="form-group">
-            <label for="nomeInputa">Cidade</label>
-            <input type="nome" class="form-control" id="nomeInputA" placeholder="Digite um nome" #nomeInputA>
-        </div>
+            <div class="form-group form-cep">
+                <label for="cepInput">Cep</label>
+                <input [(ngModel)]="cep" name="cep" [readonly]="readOnlyCep" type="number" class="form-control"
+                    id="cepInput" placeholder="00000-000">
+            </div>
 
-        <div class="form-group">
-            <label for="nomeInputa">Bairro</label>
-            <input type="nome" class="form-control" id="nomeInputA" placeholder="Digite um nome" #nomeInputA>
-        </div>
-
-        <div class="form-group">
-            <label for="nomeInputa">Cep</label>
-            <input type="nome" class="form-control" id="nomeInputA" placeholder="Digite um nome" #nomeInputA>
-        </div>
-
-        <div class="form-group">
-            <label for="nomeInputa">Telefone</label>
-            <input type="nome" class="form-control" id="nomeInputA" placeholder="Digite um nome" #nomeInputA>
+            <div class="form-group form-telefone">
+                <label for="telefoneInput">Telefone</label>
+                <input [(ngModel)]="telefone" name="telefone" [readonly]="readOnlyTelefone" type="number"
+                    class="form-control" id="telefoneInput" placeholder="(XX) XXXXX-XXXX">
+            </div>
         </div>
 
     </form>
-    <div class="container d-flex">
-        <button type="button" class="btn btn-primary btn-block">Novo</button>
-        <button type="button" class="btn btn-primary btn-block">Alterar</button>
-        <button type="button" class="btn btn-primary btn-block">Excluir</button>
-        <button type="button" class="btn btn-primary btn-block">Procurar</button>
+
+    <div class="container d-flex mt-5 p-3 form-bg-color form-btn-margin-right">
+        <input [(ngModel)]="inputProcurar" name="inputProcurar" class="w-50" [hidden]=hiddenInputProcurar
+            placeholder="Digite um nome a ser procurado">
+        <button [hidden]="hiddenBtnNovo" (click)=novo() type="button" class="btn btn-primary btn-block">Novo</button>
+        <button [hidden]="hiddenBtnAlterar" (click)=alterar() type="button"
+            class="btn btn-primary btn-block">Alterar</button>
+        <button [hidden]="hiddenBtnExcluir" (click)=excluir() type="button"
+            class="btn btn-primary btn-block">Excluir</button>
+        <button [hidden]="hiddenBtnProcurar" (click)=procurar() type="button"
+            class="btn btn-primary btn-block">Procurar</button>
+        <button [hidden]="hiddenBtnGravar" (click)=gravar() type="button"
+            class="btn btn-primary btn-block">Gravar</button>
+        <button [hidden]="hiddenBtnCerteza" (click)=gravar() type="button" class="btn btn-primary btn-block">Você tem
+            certeza de excluir esse registro?</button>
+        <button [hidden]="hiddenBtnCancelar" (click)=cancelar() type="button"
+            class="btn btn-primary btn-block">Cancelar</button>
     </div>
 </div>
